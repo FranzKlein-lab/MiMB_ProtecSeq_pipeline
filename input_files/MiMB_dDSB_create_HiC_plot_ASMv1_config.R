@@ -1,4 +1,4 @@
-## Input for create_HiCstyle_plot_commandLine.R, v.240423
+## Input for create_HiCstyle_plot_commandLine.R, v.240424
 
 # input
 filePatternF <- "_fd.txt"
@@ -21,12 +21,12 @@ fixedColCount <- 512  # number of colors in gradient; 0 for automatic count
 withCal <- FALSE   # FALSE | TRUE .. signals (depths) will be multiplied by calibration factor provided in factorColumn, output file with suffix '_cal'
 withRpm <- FALSE  # FALSE | TRUE .. normalisation according aligned reads, depths multiplied by factor provided in factorColumn, output file with suffix '_rpm'
 workingDirINCF <- workingDirINC
-inputfileCF <- "MiMB_dDSB_ZP591.22_ASMv1_calFactors240221-rp10M.txt"  # (with column "Cal.Factor")
+inputfileCF <- "MiMB_dDSB_ZP591.22_ASMv1_calFactors240724-rp10M.txt"  # (with column "Cal.Factor")
 idColumnCF <- "Sample.id"
 factorColumn <- "Cal.Factor"  # e.g. "Cal.Factor" or "RP10M"
 
 # additional DSB track (vertical lines)
-plusDSB <- TRUE  # FALSE or TRUE
+plusDSB <- FALSE  # FALSE or TRUE
 workingDirIND <- workingDirINC
 inputfileD <- "Spo11.oligos_t4_ASMv1_5prime_dpp.txt"
 sampleNameD <- "Mohibullah (2017),\nwt t4"

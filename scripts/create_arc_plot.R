@@ -2,7 +2,7 @@
 ## INPUT: fd files (chrom, start, length, depth), color table (optional), opacity setting (alpha factor), DSB reference (dpp) file (optional)
 ## OUTPUT: arc plots (pdf)
 ## Author: Doris Chen, Franz Klein
-## version 240527
+## version 240801
 
 
 ## PACKAGES
@@ -186,7 +186,7 @@ plot_arcs <- function(fdTableSel, fixedMaxDepth, depthMax0, alphaOffset, selColo
 
 
 ## INPUT (user-defined parameters)
-workingDirINC <- "Z:/forMiMB/input_files"
+workingDirINC <- "Z:/forMiMB/test/input_files"
 inputfileC <- "MiMB_dDSB_create_arc_plot_config.R"
 
 source(paste0(workingDirINC,"/",inputfileC))  
@@ -235,7 +235,7 @@ if(withColorTable)
 if(length(vColors)>0)
 {  print(vColors)
 } else
-  vColors <- c("black")
+  vColors <- rep("black", length(vIds))
 
 # get calibration factors (optional)
 if(withCal)
@@ -244,7 +244,7 @@ if(withCal)
    setnames(calTable, gsub(" ", ".", names(calTable)))
    print(calTable) 
    
-   vCals <- calTable[match(vIds,base::get(idColumnCF)), base::get(factorColumn)]
+   vCals <- calTable[match(vIds,base::get(idColumnCF)), base::get(factorColumnCF)]
    if(length(vCals)>0)
    {  print(vCals)
    } else
